@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -323,56 +324,69 @@ display: flex;
 justify-content: center;
 padding-bottom: 10px;
 }
-/* Outfit Game - TAP TO SELECT (Mobile Friendly) */
+/* Outfit Game - TAP TO SELECT (Mobile Friendly) - REVISED */
 .outfit-drag-layout {
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
+justify-content: flex-start;
 width: 100%;
 height: 100%;
-padding: 10px;
-gap: 10px;
+padding: 5px;
+gap: 5px;
 }
 .outfit-drag-title {
 background: rgba(255, 182, 193, 0.95);
-padding: 0.6rem 1.2rem;
+padding: 0.4rem 1rem;
 border-radius: 15px;
 font-family: 'Fredoka One', cursive;
-font-size: 1rem;
+font-size: 0.85rem;
 color: #ff9f80;
 box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 z-index: 10;
+margin-top: 5px;
 }
 .outfit-drag-area {
 display: flex;
-gap: 15px;
+gap: 5px;
 align-items: center;
 justify-content: center;
 flex: 1;
 width: 100%;
-flex-direction: column;
+flex-direction: row;
+padding: 5px;
 }
-.clothes-container {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 8px;
-padding: 12px;
-background: rgba(255, 255, 255, 0.5);
-border-radius: 15px;
-min-width: 200px;
+.clothes-container-left {
+display: flex;
+flex-direction: column;
+gap: 5px;
+padding: 5px;
+background: rgba(255, 255, 255, 0.3);
+border-radius: 10px;
+align-items: center;
+justify-content: center;
+}
+.clothes-container-right {
+display: flex;
+flex-direction: column;
+gap: 5px;
+padding: 5px;
+background: rgba(255, 255, 255, 0.3);
+border-radius: 10px;
+align-items: center;
+justify-content: center;
 }
 .clothes-item {
-width: 60px;
-height: 60px;
+width: 45px;
+height: 45px;
 background-size: contain;
 background-position: center;
 background-repeat: no-repeat;
-border: 3px solid #ab47bc;
-border-radius: 10px;
+border: 2px solid #ab47bc;
+border-radius: 8px;
 cursor: pointer;
 transition: all 0.3s ease;
-box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 background-color: rgba(255, 255, 255, 0.8);
 touch-action: manipulation;
 }
@@ -381,7 +395,8 @@ transform: scale(0.95);
 }
 .clothes-item.selected {
 border-color: #ff9f80;
-box-shadow: 0 0 15px rgba(255, 159, 128, 0.8);
+border-width: 3px;
+box-shadow: 0 0 10px rgba(255, 159, 128, 0.8);
 animation: pop 0.3s ease;
 }
 .clothes-item.placed {
@@ -391,8 +406,8 @@ border-color: #4caf50;
 }
 .body-image-container {
 position: relative;
-width: 280px;
-height: 400px;
+width: 200px;
+height: 300px;
 }
 .body-image {
 width: 100%;
@@ -400,18 +415,18 @@ height: 100%;
 background-size: contain;
 background-position: center;
 background-repeat: no-repeat;
-border-radius: 15px;
-box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+border-radius: 10px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 .drop-zone {
 position: absolute;
-border: 3px dashed #ff9f80;
-border-radius: 10px;
+border: 2px dashed #ff9f80;
+border-radius: 8px;
 background: rgba(255, 182, 193, 0.3);
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: 1.5rem;
+font-size: 1rem;
 transition: all 0.3s ease;
 cursor: pointer;
 touch-action: manipulation;
@@ -425,71 +440,88 @@ border-color: #ff6f61;
 transform: scale(1.05);
 }
 .drop-zone.filled {
-border: 3px solid #4caf50;
+border: 2px solid #4caf50;
 background: rgba(165, 214, 167, 0.5);
 animation: pop 0.3s ease;
 }
 .drop-zone-head {
-top: 30px;
+top: 20px;
 left: 50%;
 transform: translateX(-50%);
-width: 60px;
-height: 50px;
+width: 45px;
+height: 40px;
 }
 .drop-zone-torso {
-top: 100px;
+top: 75px;
 left: 50%;
 transform: translateX(-50%);
-width: 85px;
-height: 70px;
+width: 65px;
+height: 55px;
 }
 .drop-zone-legs {
+top: 135px;
+left: 50%;
+transform: translateX(-50%);
+width: 55px;
+height: 45px;
+}
+.drop-zone-legs2 {
 top: 180px;
 left: 50%;
 transform: translateX(-50%);
-width: 70px;
-height: 60px;
-}
-.drop-zone-legs2 {
-top: 240px;
-left: 50%;
-transform: translateX(-50%);
-width: 60px;
-height: 50px;
+width: 45px;
+height: 40px;
 }
 .drop-zone-feet {
-top: 295px;
+top: 220px;
 left: 50%;
 transform: translateX(-50%);
-width: 70px;
-height: 45px;
+width: 55px;
+height: 35px;
 }
 .drop-zone-hand {
-top: 145px;
-left: 95px;
-width: 45px;
-height: 50px;
+top: 110px;
+left: 135px;
+width: 35px;
+height: 40px;
 }
 .drop-zone-face {
-top: 60px;
+top: 45px;
 left: 50%;
 transform: translateX(-50%);
-width: 50px;
-height: 35px;
+width: 40px;
+height: 28px;
 }
 .outfit-drag-message {
 position: absolute;
-bottom: 30px;
+bottom: 15px;
 left: 50%;
 transform: translateX(-50%);
 z-index: 10;
 }
+.outfit-drag-message .dialogue-box {
+padding: 0.5rem 0.8rem;
+max-width: 250px;
+}
+.outfit-drag-message .dialogue-text {
+font-size: 0.65rem;
+margin-bottom: 0;
+}
 .progress-container-outfit {
 background: rgba(255, 255, 255, 0.9);
-padding: 0.5rem 1rem;
-border-radius: 12px;
+padding: 0.4rem 0.8rem;
+border-radius: 10px;
 text-align: center;
 z-index: 10;
+margin-top: 5px;
+}
+.progress-container-outfit .progress-text {
+font-size: 0.7rem;
+margin-bottom: 0.2rem;
+}
+.progress-container-outfit .progress-bar {
+width: 120px;
+height: 8px;
 }
 /* Post Outfit Screen Styles */
 .post-outfit-screen {
@@ -797,6 +829,57 @@ transform: scale(0.95);
 .music-icon {
 font-size: 1.3rem;
 }
+/* Post Pancake Intro - Smaller dialogue */
+.post-pancake-intro {
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+position: relative;
+}
+.post-pancake-intro::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0, 0, 0, 0.3);
+}
+.post-pancake-dialogue {
+position: absolute;
+bottom: 40px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 10;
+}
+.post-pancake-dialogue .dialogue-box {
+max-width: 280px;
+padding: 0.6rem 1rem;
+}
+.post-pancake-dialogue .dialogue-text {
+font-size: 0.75rem;
+}
+/* Outfit Intro Screen */
+.outfit-intro {
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+position: relative;
+}
+.outfit-dialogue {
+position: absolute;
+bottom: 40px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 10;
+}
+.outfit-dialogue .dialogue-box {
+max-width: 90%;
+padding: 0.8rem 1.5rem;
+}
+.outfit-dialogue .dialogue-text {
+font-size: 0.9rem;
+}
 /* Mobile Responsive Adjustments */
 @media (max-width: 400px) {
 .game-title {
@@ -806,45 +889,44 @@ font-size: 2rem;
 padding: 0.8rem 2.5rem;
 font-size: 1.3rem;
 }
-.clothes-container {
-grid-template-columns: repeat(3, 1fr);
-min-width: 180px;
+.body-image-container {
+width: 170px;
+height: 260px;
 }
 .clothes-item {
-width: 50px;
-height: 50px;
-}
-.body-image-container {
-width: 240px;
-height: 350px;
+width: 40px;
+height: 40px;
 }
 .drop-zone-head {
-width: 50px;
-height: 40px;
+width: 40px;
+height: 35px;
 }
 .drop-zone-torso {
-width: 75px;
-height: 60px;
+width: 55px;
+height: 48px;
 }
 .drop-zone-legs {
-width: 60px;
-height: 50px;
+width: 48px;
+height: 40px;
 }
 .drop-zone-legs2 {
-width: 50px;
-height: 40px;
+width: 40px;
+height: 35px;
 }
 .drop-zone-feet {
-width: 60px;
-height: 40px;
+width: 48px;
+height: 32px;
 }
 .drop-zone-hand {
-width: 40px;
-height: 45px;
+width: 32px;
+height: 35px;
 }
 .drop-zone-face {
-width: 45px;
-height: 30px;
+width: 35px;
+height: 25px;
+}
+.post-pancake-dialogue .dialogue-box {
+max-width: 250px;
 }
 }
 </style>
@@ -854,19 +936,16 @@ height: 30px;
 <div class="music-control" onclick="toggleMusic()">
 <span class="music-icon" id="music-icon">🔊</span>
 </div>
-
 <!-- Background Music -->
 <audio id="bg-music" loop preload="auto">
 <source src="corrupted_castle.mp3" type="audio/mpeg">
 </audio>
-
 <div class="game-container">
 <!-- Intro Screen -->
 <div id="intro-screen" class="screen intro-screen active">
 <h1 class="game-title">Ángel Vlog</h1>
 <button class="play-btn" onclick="startGame()">PLAY</button>
 </div>
-
 <!-- Level 1 Intro -->
 <div id="level1-intro" class="screen level1-intro-screen">
 <div class="level1-dialogue">
@@ -878,7 +957,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Pancake Game -->
 <div id="pancake-game" class="screen game-screen">
 <div class="pancake-layout">
@@ -917,10 +995,8 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Post Pancake Intro -->
 <div id="post-pancake-intro" class="screen post-pancake-intro">
-<div class="post-pancake-bg" id="post-pancake-bg"></div>
 <div class="post-pancake-dialogue">
 <div class="dialogue-box">
 <p class="dialogue-text">
@@ -930,10 +1006,8 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Outfit Intro -->
 <div id="outfit-intro" class="screen outfit-intro">
-<div class="rainbow"></div>
 <div class="outfit-dialogue">
 <div class="dialogue-box">
 <p class="dialogue-text">
@@ -943,19 +1017,18 @@ height: 30px;
 </div>
 </div>
 </div>
-
-<!-- Outfit TAP Game (Mobile Friendly) -->
+<!-- Outfit TAP Game (Mobile Friendly) - REVISED -->
 <div id="outfit-drag-game" class="screen game-screen">
 <div class="outfit-drag-layout">
-<h2 class="outfit-drag-title">Viste a Ángel para la entrevista</h2>
+<h2 class="outfit-drag-title">Viste a Ángel</h2>
 <div class="progress-container-outfit">
-<p class="progress-text">Prendas colocadas: <span id="outfit-count">0</span>/7</p>
+<p class="progress-text">Prendas: <span id="outfit-count">0</span>/7</p>
 <div class="progress-bar">
 <div class="progress-fill" id="outfit-progress"></div>
 </div>
 </div>
 <div class="outfit-drag-area">
-<div class="clothes-container" id="clothes-container">
+<div class="clothes-container-left" id="clothes-left">
 </div>
 <div class="body-image-container">
 <div class="body-image" id="body-image"></div>
@@ -967,17 +1040,18 @@ height: 30px;
 <div class="drop-zone drop-zone-feet" data-zone="feet" data-item="tacones" onclick="placeItem('feet', 'tacones')"></div>
 <div class="drop-zone drop-zone-hand" data-zone="hand" data-item="cartera" onclick="placeItem('hand', 'cartera')"></div>
 </div>
+<div class="clothes-container-right" id="clothes-right">
+</div>
 </div>
 <div class="outfit-drag-message">
 <div class="dialogue-box">
 <p class="dialogue-text" id="drag-message">
-<span class="character-name">Ángel:</span> Toca una prenda y luego toca donde va
+<span class="character-name">Ángel:</span> Toca prenda y luego zona
 </p>
 </div>
 </div>
 </div>
 </div>
-
 <!-- Post Outfit Screen -->
 <div id="post-outfit-screen" class="screen post-outfit-screen">
 <div class="post-outfit-bg" id="post-outfit-bg"></div>
@@ -997,7 +1071,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Interview Level -->
 <div id="interview-level" class="screen interview-screen">
 <div class="interview-progress">
@@ -1028,10 +1101,8 @@ height: 30px;
 </div>
 </div>
 <div class="answer-options" id="answer-options" style="display: none;">
-<!-- Answer buttons will be generated here -->
 </div>
 </div>
-
 <!-- Post Interview -->
 <div id="post-interview-screen" class="screen level1-intro-screen">
 <div class="level1-dialogue">
@@ -1043,7 +1114,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Race Intro -->
 <div id="race-intro" class="screen race-intro-screen">
 <div class="race-intro-dialogue">
@@ -1055,7 +1125,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Race Game -->
 <div id="race-game" class="screen race-game-screen">
 <div class="race-progress">
@@ -1063,14 +1132,11 @@ height: 30px;
 </div>
 <h2 class="race-title">🍌 Carrera 3K 🍌</h2>
 <div class="angel-runner" id="angel-runner"></div>
-<div id="bananas-container">
-<!-- Bananas will be generated here -->
-</div>
+<div id="bananas-container"></div>
 <div class="race-controls">
 <button class="run-btn" id="run-btn" onclick="runAngel()">¡CORRER!</button>
 </div>
 </div>
-
 <!-- Post Race Screen -->
 <div id="post-race-screen" class="screen post-race-screen">
 <div class="post-race-dialogue">
@@ -1082,7 +1148,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Gifts Screen 1 -->
 <div id="gifts-screen-1" class="screen gifts-screen">
 <div class="gifts-dialogue">
@@ -1094,7 +1159,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Gifts Screen 2 -->
 <div id="gifts-screen-2" class="screen gifts-screen">
 <div class="gifts-dialogue">
@@ -1106,7 +1170,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Gifts Screen 3 - Letter -->
 <div id="gifts-screen-3" class="screen gifts-screen">
 <div class="gifts-dialogue">
@@ -1118,7 +1181,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Gifts Screen 4 - Opened Letter -->
 <div id="gifts-screen-4" class="screen gifts-screen">
 <div class="gifts-dialogue">
@@ -1127,7 +1189,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <!-- Victory Screen -->
 <div id="victory-screen" class="screen" style="background: linear-gradient(135deg, #ffecb3 0%, #ffe082 100%);">
 <h1 class="game-title" style="animation: none;">Felicidades</h1>
@@ -1139,7 +1200,6 @@ height: 30px;
 </div>
 </div>
 </div>
-
 <script>
 let currentLevel = 0;
 let selectedIngredients = [];
@@ -1149,10 +1209,8 @@ let bananasCollected = 0;
 let angelPosition = 5;
 let isMusicPlaying = false;
 let selectedClothItem = null;
-
 const bgMusic = document.getElementById('bg-music');
 bgMusic.volume = 0.5;
-
 const correctIngredients = ['avena', 'huevos', 'leche', 'mantequilla', 'queso', 'azúcar'];
 const allIngredients = [
 { name: 'avena', correct: true },
@@ -1166,7 +1224,6 @@ const allIngredients = [
 { name: 'ajo', correct: false },
 { name: 'bbq', correct: false }
 ];
-
 const correctOutfits = ['peluca', 'blusa', 'medias', 'falda', 'tacones', 'cartera', 'lentes'];
 const allClothes = [
 { name: 'peluca', correct: true, image: 'https://images4.imagebam.com/fa/a7/19/ME1B24YW_o.PNG', zone: 'head' },
@@ -1177,7 +1234,6 @@ const allClothes = [
 { name: 'cartera', correct: true, image: 'https://images4.imagebam.com/2c/00/00/ME1B24Z1_o.PNG', zone: 'hand' },
 { name: 'lentes', correct: true, image: 'https://images4.imagebam.com/51/90/e1/ME1B24Z2_o.PNG', zone: 'face' }
 ];
-
 const interviewDialogues = [
 { speaker: 'right', name: 'La Pringada', text: 'hola vlog de ángel soy no binarie' },
 { speaker: 'right', name: 'La Pringada', text: 'hoy le abrimos la puerta de Special People Club al cumpleañero Angel, el es inmamable, fastidioso, un circo' },
@@ -1188,7 +1244,6 @@ const interviewDialogues = [
 { speaker: 'left', name: 'Ángel', text: 'respuesta', type: 'question2' },
 { speaker: 'left', name: 'Ángel', text: 'es que solo me gusta llevar la contraria sino me aburro tía' }
 ];
-
 const answerOptions1 = [
 { text: 'porque lo soy', correct: false },
 { text: 'porque me envidian', correct: false },
@@ -1196,14 +1251,12 @@ const answerOptions1 = [
 { text: 'porque me gusta protagonizar', correct: true },
 { text: 'porque quieren apagar mi luz', correct: false }
 ];
-
 const answerOptions2 = [
 { text: 'Jorge', correct: true },
 { text: 'Jorge siempre', correct: true },
 { text: 'Jorge probablemente', correct: true },
 { text: 'Admito que Jorge', correct: true }
 ];
-
 const bananaPositions = [
 { left: 15, top: 60 },
 { left: 30, top: 40 },
@@ -1212,7 +1265,6 @@ const bananaPositions = [
 { left: 75, top: 60 },
 { left: 85, top: 50 }
 ];
-
 function toggleMusic() {
 if (isMusicPlaying) {
 bgMusic.pause();
@@ -1223,58 +1275,49 @@ document.getElementById('music-icon').textContent = '🔊';
 }
 isMusicPlaying = !isMusicPlaying;
 }
-
 function showScreen(screenId) {
 document.querySelectorAll('.screen').forEach(screen => {
 screen.classList.remove('active');
 });
 document.getElementById(screenId).classList.add('active');
 }
-
 function startGame() {
 bgMusic.play().then(() => {
 isMusicPlaying = true;
 document.getElementById('music-icon').textContent = '🔊';
 }).catch(e => {
-console.log('Audio autoplay was prevented. User must interact first.');
+console.log('Audio autoplay was prevented.');
 isMusicPlaying = false;
 document.getElementById('music-icon').textContent = '🔇';
 });
 showScreen('level1-intro');
 document.getElementById('level1-intro').style.backgroundImage = 'url(https://images4.imagebam.com/81/ca/f4/ME1B29L7_o.jpg)';
 }
-
 function startLevel1() {
 showScreen('pancake-game');
 document.getElementById('pancake-bg').style.backgroundImage = 'url(https://images4.imagebam.com/03/cd/1e/ME1B29HC_o.jpg)';
 initPancakeGame();
 }
-
 function initPancakeGame() {
 selectedIngredients = [];
 updateProgress();
 document.getElementById('bowl-contents').style.height = '0px';
 document.getElementById('game-message').innerHTML = '<span class="character-name">Ángel:</span> Selecciona los ingredientes correctos';
-
 const leftContainer = document.getElementById('ingredients-left');
 const rightContainer = document.getElementById('ingredients-right');
 leftContainer.innerHTML = '';
 rightContainer.innerHTML = '';
-
 const shuffled = [...allIngredients].sort(() => Math.random() - 0.5);
 const midPoint = Math.ceil(shuffled.length / 2);
-
 shuffled.slice(0, midPoint).forEach(ingredient => {
 const btn = createIngredientBtn(ingredient);
 leftContainer.appendChild(btn);
 });
-
 shuffled.slice(midPoint).forEach(ingredient => {
 const btn = createIngredientBtn(ingredient);
 rightContainer.appendChild(btn);
 });
 }
-
 function createIngredientBtn(ingredient) {
 const btn = document.createElement('button');
 btn.className = 'ingredient-btn';
@@ -1284,7 +1327,6 @@ btn.dataset.correct = ingredient.correct;
 btn.onclick = () => selectIngredient(btn);
 return btn;
 }
-
 function selectIngredient(btn) {
 if (btn.classList.contains('selected')) {
 btn.classList.remove('selected');
@@ -1292,18 +1334,14 @@ selectedIngredients = selectedIngredients.filter(i => i !== btn.dataset.name);
 updateProgress();
 return;
 }
-
 if (btn.dataset.correct === 'true') {
 btn.classList.add('selected');
 selectedIngredients.push(btn.dataset.name);
 updateProgress();
-
 const bowlContents = document.getElementById('bowl-contents');
 const currentHeight = parseInt(bowlContents.style.height) || 0;
 bowlContents.style.height = (currentHeight + 8) + 'px';
-
 document.getElementById('game-message').innerHTML = '<span class="character-name">Ángel:</span> ¡Muy bien! Sigue así';
-
 if (selectedIngredients.length === correctIngredients.length) {
 setTimeout(() => {
 document.getElementById('game-message').innerHTML = '<span class="character-name">Ángel:</span> ¡Perfecto! Los pancakes están listos';
@@ -1320,50 +1358,50 @@ btn.classList.remove('wrong');
 }, 500);
 }
 }
-
 function updateProgress() {
 document.getElementById('ingredient-count').textContent = selectedIngredients.length;
 const percentage = (selectedIngredients.length / correctIngredients.length) * 100;
 document.getElementById('progress-fill').style.width = percentage + '%';
 }
-
 function completeLevel1() {
 showScreen('post-pancake-intro');
-document.getElementById('post-pancake-bg').style.backgroundImage = 'url(https://images4.imagebam.com/eb/02/8e/ME1AZHWH_o.jpg)';
+document.getElementById('post-pancake-intro').style.backgroundImage = 'url(https://images4.imagebam.com/d2/3e/3f/ME1B5B22_o.jpg)';
 currentLevel = 1;
 }
-
 function startOutfitIntro() {
 showScreen('outfit-intro');
+document.getElementById('outfit-intro').style.backgroundImage = 'url(https://images4.imagebam.com/74/ca/3e/ME1B5B7H_o.png)';
 }
-
 function startOutfitGame() {
 showScreen('outfit-drag-game');
 document.getElementById('body-image').style.backgroundImage = 'url(https://images4.imagebam.com/7f/58/e6/ME1B259D_o.PNG)';
 initOutfitDragGame();
 }
-
 function initOutfitDragGame() {
 placedItems = [];
 selectedClothItem = null;
 updateOutfitProgress();
-document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Toca una prenda y luego toca donde va';
-
+document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Toca prenda y luego zona';
 document.querySelectorAll('.drop-zone').forEach(zone => {
 zone.classList.remove('filled');
 zone.style.backgroundImage = 'none';
 zone.dataset.filled = 'false';
 });
-
-const container = document.getElementById('clothes-container');
-container.innerHTML = '';
-
-allClothes.forEach((cloth, index) => {
+const leftContainer = document.getElementById('clothes-left');
+const rightContainer = document.getElementById('clothes-right');
+leftContainer.innerHTML = '';
+rightContainer.innerHTML = '';
+const shuffled = [...allClothes].sort(() => Math.random() - 0.5);
+const midPoint = Math.ceil(shuffled.length / 2);
+shuffled.slice(0, midPoint).forEach((cloth, index) => {
 const item = createClothesItem(cloth, index);
-container.appendChild(item);
+leftContainer.appendChild(item);
+});
+shuffled.slice(midPoint).forEach((cloth, index) => {
+const item = createClothesItem(cloth, index);
+rightContainer.appendChild(item);
 });
 }
-
 function createClothesItem(cloth, index) {
 const item = document.createElement('div');
 item.className = 'clothes-item';
@@ -1375,14 +1413,9 @@ item.dataset.index = index;
 item.onclick = () => selectClothItem(item);
 return item;
 }
-
 function selectClothItem(item) {
 if (item.classList.contains('placed')) return;
-
-// Deselect previous
 document.querySelectorAll('.clothes-item').forEach(i => i.classList.remove('selected'));
-
-// Select new
 item.classList.add('selected');
 selectedClothItem = {
 name: item.dataset.name,
@@ -1390,94 +1423,77 @@ zone: item.dataset.zone,
 index: item.dataset.index,
 element: item
 };
-
-document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Ahora toca la zona del cuerpo donde va';
+document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Ahora toca la zona';
 }
-
 function placeItem(zone, itemName) {
 if (!selectedClothItem) {
-document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Primero selecciona una prenda';
+document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Primero selecciona prenda';
 return;
 }
-
 const zoneElement = document.querySelector(`.drop-zone[data-zone="${zone}"]`);
-
 if (zoneElement.dataset.filled === 'true') {
-document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Esa zona ya está ocupada';
+document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Zona ocupada';
 return;
 }
-
 if (selectedClothItem.zone === zone && selectedClothItem.name === itemName) {
-// Correct placement
 zoneElement.classList.add('filled');
 zoneElement.style.backgroundImage = `url(${allClothes.find(c => c.name === selectedClothItem.name).image})`;
 zoneElement.style.backgroundSize = 'contain';
 zoneElement.style.backgroundPosition = 'center';
 zoneElement.style.backgroundRepeat = 'no-repeat';
 zoneElement.dataset.filled = 'true';
-
 placedItems.push(selectedClothItem.name);
 updateOutfitProgress();
-
 selectedClothItem.element.classList.add('placed');
 selectedClothItem.element.classList.remove('selected');
 selectedClothItem.element.onclick = null;
 selectedClothItem = null;
-
-document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> ¡Excelente! Sigue así';
-
+document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> ¡Bien! Sigue';
 if (placedItems.length === correctOutfits.length) {
 setTimeout(() => {
-document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> ¡Perfecto! Lista para la entrevista';
+document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> ¡Perfecto!';
 setTimeout(() => {
 completeOutfitGame();
 }, 1500);
 }, 500);
 }
 } else {
-document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> Esa prenda no va ahí, intenta de nuevo';
+document.getElementById('drag-message').innerHTML = '<span class="character-name">Ángel:</span> No va ahí';
 zoneElement.classList.add('wrong');
 setTimeout(() => {
 zoneElement.classList.remove('wrong');
 }, 500);
 }
 }
-
 function updateOutfitProgress() {
 document.getElementById('outfit-count').textContent = placedItems.length;
 const percentage = (placedItems.length / correctOutfits.length) * 100;
 document.getElementById('outfit-progress').style.width = percentage + '%';
 }
-
 function completeOutfitGame() {
 showScreen('post-outfit-screen');
 document.getElementById('post-outfit-bg').style.backgroundImage = 'url(https://images4.imagebam.com/93/02/3e/ME1B26HL_o.PNG)';
 currentLevel = 2;
 }
-
 function startInterviewLevel() {
 showScreen('interview-level');
 document.getElementById('interview-level').style.backgroundImage = 'url(https://images4.imagebam.com/f5/cc/ec/ME1B26U0_o.PNG)';
 interviewStep = 0;
 updateInterview();
 }
-
 function updateInterview() {
 const leftDialogue = document.getElementById('interview-left');
 const rightDialogue = document.getElementById('interview-right');
 const rightContinue = document.getElementById('interview-right-continue');
 const answerOptionsContainer = document.getElementById('answer-options');
-
 leftDialogue.style.display = 'none';
 rightDialogue.style.display = 'none';
 rightContinue.style.display = 'none';
 answerOptionsContainer.style.display = 'none';
-
 if (interviewStep < interviewDialogues.length) {
 const dialogue = interviewDialogues[interviewStep];
 const questionNum = interviewStep + 1;
 document.getElementById('question-count').textContent = questionNum;
-
 if (dialogue.type === 'question1') {
 showAnswerOptions(answerOptions1);
 } else if (dialogue.type === 'question2') {
@@ -1501,12 +1517,10 @@ document.getElementById('post-interview-screen').style.backgroundImage = 'url(ht
 }, 1000);
 }
 }
-
 function showAnswerOptions(options) {
 const answerOptionsContainer = document.getElementById('answer-options');
 answerOptionsContainer.innerHTML = '';
 answerOptionsContainer.style.display = 'flex';
-
 options.forEach((option, index) => {
 const btn = document.createElement('button');
 btn.className = 'answer-btn';
@@ -1516,7 +1530,6 @@ btn.onclick = () => selectAnswer(btn, options);
 answerOptionsContainer.appendChild(btn);
 });
 }
-
 function selectAnswer(btn, options) {
 if (btn.dataset.correct === 'true') {
 btn.classList.add('correct');
@@ -1531,38 +1544,30 @@ btn.classList.remove('wrong');
 }, 500);
 }
 }
-
 function nextInterviewStep() {
 interviewStep++;
 updateInterview();
 }
-
 function startRaceIntro() {
 showScreen('race-intro');
 document.getElementById('race-intro').style.backgroundImage = 'url(https://images4.imagebam.com/12/5a/45/ME1B2D8J_o.PNG)';
 }
-
 function startRaceGame() {
 showScreen('race-game');
 document.getElementById('race-game').style.backgroundImage = 'url(https://images4.imagebam.com/2c/58/ad/ME1B2DOO_o.jpg)';
 initRaceGame();
 }
-
 function initRaceGame() {
 bananasCollected = 0;
 angelPosition = 5;
 updateBananaCount();
-
 const angelRunner = document.getElementById('angel-runner');
 angelRunner.style.backgroundImage = 'url(https://images4.imagebam.com/6d/6b/a6/ME1B2E17_o.PNG)';
 angelRunner.style.left = angelPosition + '%';
 angelRunner.style.bottom = '150px';
-
 document.getElementById('run-btn').disabled = false;
-
 const bananasContainer = document.getElementById('bananas-container');
 bananasContainer.innerHTML = '';
-
 bananaPositions.forEach((pos, index) => {
 const banana = document.createElement('div');
 banana.className = 'banana';
@@ -1574,22 +1579,16 @@ banana.dataset.collected = 'false';
 bananasContainer.appendChild(banana);
 });
 }
-
 function updateBananaCount() {
 document.getElementById('banana-count').textContent = bananasCollected;
 }
-
 function runAngel() {
 if (bananasCollected >= 6) return;
-
 angelPosition += 15;
 if (angelPosition > 90) angelPosition = 90;
-
 const angelRunner = document.getElementById('angel-runner');
 angelRunner.style.left = angelPosition + '%';
-
 checkBananaCollision();
-
 if (bananasCollected >= 6) {
 document.getElementById('run-btn').disabled = true;
 setTimeout(() => {
@@ -1597,38 +1596,31 @@ showPostRaceScreen();
 }, 1000);
 }
 }
-
 function showPostRaceScreen() {
 showScreen('post-race-screen');
 document.getElementById('post-race-screen').style.backgroundImage = 'url(https://images4.imagebam.com/fc/30/ca/ME1B2FIU_o.png)';
 }
-
 function startGiftsLevel() {
 showScreen('gifts-screen-1');
 document.getElementById('gifts-screen-1').style.backgroundImage = 'url(https://images4.imagebam.com/9e/5b/4e/ME1B2XO5_o.jpg)';
 }
-
 function startGiftsLevel2() {
 showScreen('gifts-screen-2');
 document.getElementById('gifts-screen-2').style.backgroundImage = 'url(https://images4.imagebam.com/a7/e2/cf/ME1B2XQW_o.jpg)';
 }
-
 function startGiftsLevel3() {
 showScreen('gifts-screen-3');
 document.getElementById('gifts-screen-3').style.backgroundImage = 'url(https://images4.imagebam.com/0c/ee/1a/ME1B2YIB_o.PNG)';
 }
-
 function openLetter() {
 showScreen('gifts-screen-4');
 document.getElementById('gifts-screen-4').style.backgroundImage = 'url(https://images4.imagebam.com/d9/ee/9d/ME1B2YIM_o.PNG)';
 document.getElementById('gifts-screen-4').style.backgroundSize = 'contain';
 document.getElementById('gifts-screen-4').style.backgroundPosition = 'center';
 }
-
 function showVictory() {
 showScreen('victory-screen');
 }
-
 function checkBananaCollision() {
 const bananas = document.querySelectorAll('.banana');
 bananas.forEach(banana => {
@@ -1643,7 +1635,6 @@ updateBananaCount();
 }
 });
 }
-
 function restartGame() {
 currentLevel = 0;
 selectedIngredients = [];
@@ -1657,3 +1648,8 @@ showScreen('intro-screen');
 </script>
 </body>
 </html>
+```
+
+
+
+¡Ahora todo cabe perfectamente en la pantalla del teléfono! 📱✨
